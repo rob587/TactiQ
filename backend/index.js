@@ -14,3 +14,5 @@ app.use(express.json());
 app.listen(PORT, () => {
   console.log(`Server aperto sulla porta: ${PORT}`);
 });
+
+// importare e usare le route
