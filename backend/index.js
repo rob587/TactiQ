@@ -1,6 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import authRouter from "./routes/auth.js";
+import r6sRouter from "./routes/r6s.js";
+import owRouter from "./routes/ow.js";
+import stratsRouter from "./routes/strats.js";
 
 dotenv.config();
 
