@@ -62,6 +62,6 @@ Sii specifico e pratico.
     temperature: 0.7,
     max_tokens: 1000,
   });
-
+  console.log("GROQ RESPONSE:", JSON.stringify(completion.choices[0], null, 2));
   return completion.choices[0].message.content;
 };
