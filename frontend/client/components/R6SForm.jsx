@@ -59,6 +59,15 @@ const R6SForm = ({ onResult }) => {
   const [selectedOps, setSelectedOps] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const toggleOperator = (op) => {
+    if (selectedOps.includes(op)) {
+      setSelectedOps(selectedOps.filter((o) => o !== op));
+    } else if (selectedOps.length < 5) {
+      setSelectedOps([...selectedOps, op]);
+    }
+  };
+
   return <div></div>;
 };
 
