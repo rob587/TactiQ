@@ -66,6 +66,30 @@ const OWForm = () => {
     }
   };
 
+  const isSelected = (hero) => {
+    return activeTeam === "our"
+      ? ourComp.includes(hero)
+      : enemyComp.includes(hero);
+  };
+
+  const handleSubmit = async () => {
+    if (ourComp.length === 0 || enemyComp.length === 0) {
+      setError("Seleziona almeno un hero per ogni team");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await analyzeOW({ ourComp, enemyComp });
+      onResult(response.data);
+    } catch (err) {
+      setError(err.response?.data?.error || "Errore durante l'analisi");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return <div></div>;
 };
 
