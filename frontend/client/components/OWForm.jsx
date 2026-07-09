@@ -50,6 +50,22 @@ const OWForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const toggleHero = (hero) => {
+    if (activeTeam === "our") {
+      if (ourComp.includes(hero)) {
+        setOurComp(ourComp.filter((h) => h !== hero));
+      } else if (ourComp.length < 5) {
+        setOurComp([...ourComp, hero]);
+      }
+    } else {
+      if (enemyComp.includes(hero)) {
+        setEnemyComp(enemyComp.filter((h) => h !== hero));
+      } else if (enemyComp.length < 5) {
+        setEnemyComp([...enemyComp, hero]);
+      }
+    }
+  };
+
   return <div></div>;
 };
 
