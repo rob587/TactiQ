@@ -68,7 +68,33 @@ const R6SForm = ({ onResult }) => {
     }
   };
 
-  return <div></div>;
+  const handleSubmit = async () => {
+    if (!map) {
+      setError("Seleziona una mappa");
+      return;
+    }
+    if (selectedOps.length === 0) {
+      setError("Seleziona almeno un operatore");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await analyzeR6S({
+        map,
+        side,
+        operators: selectedOps,
+      });
+      onResult(response.data);
+    } catch (err) {
+      setError(err.response?.data?.error || "Errore durante l'analisi");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return <></>;
 };
 
 export default R6SForm;
