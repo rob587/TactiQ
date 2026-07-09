@@ -172,7 +172,7 @@ const R6SForm = ({ onResult }) => {
           disabled={loading}
           className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-900 text-white font-semibold py-3 rounded-lg transition-colors"
         >
-          {loading ? "⏳ Generando strat..." : "🚀 Genera Strat"}
+          {loading ? " Generando strat..." : " Genera Strat"}
         </button>
       </div>
     </>
