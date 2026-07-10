@@ -18,6 +18,23 @@ const History = () => {
     }
   };
 
+  useEffect(() => {
+    loadStrats();
+  }, []);
+
+  const filtered = strats.filter((s) => {
+    if (filter === "all") return true;
+    return s.game === filter;
+  });
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center text-gray-400">
+        Caricamento
+      </div>
+    );
+  }
+
   return <></>;
 };
 
