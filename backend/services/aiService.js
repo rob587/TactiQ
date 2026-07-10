@@ -24,14 +24,13 @@ Rispondi in italiano con questa struttura:
 3. **Esecuzione** — come entrare/difendere
 4. **Rotazioni** — movimenti durante il round
 5. **Callout chiave** — punti importanti della mappa
-6. **Tips** — consigli specifici per questa combo
 
 Sii specifico e pratico.
         `,
       },
     ],
     temperature: 0.7,
-    max_tokens: 1000,
+    max_tokens: 3000,
   });
   return completion.choices[0].message.content;
 };
@@ -53,14 +52,13 @@ Rispondi in italiano con questa struttura:
 2. **Strategia principale** — come approcciarsi al team fight
 3. **Ultimate combos** — ultime da combinare
 4. **Counter picks** — hero da swappare se non funziona
-5. **Tips** — consigli specifici per questo matchup
 
 Sii specifico e pratico.
         `,
       },
     ],
     temperature: 0.7,
-    max_tokens: 1000,
+    max_tokens: 2000,
   });
   console.log("GROQ RESPONSE:", JSON.stringify(completion.choices[0], null, 2));
   return completion.choices[0].message.content;
