@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import History from "./pages/History";
 import Navbar from "./components/Navbar";
 
-const ProtectedRoutes = ({ children }) => {
+const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
 
   if (loading)
