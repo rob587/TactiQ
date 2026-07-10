@@ -149,7 +149,7 @@ const R6SForm = ({ onResult }) => {
             Operatori ({selectedOps.length}/5)
           </label>
           <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
-            {R6S_OPERATORS.map((op) => (
+            {OPERATORS.map((op) => (
               <button
                 key={op}
                 onClick={() => toggleOperator(op)}
