@@ -30,7 +30,8 @@ Sii specifico e pratico.
       },
     ],
     temperature: 0.7,
-    max_tokens: 3000,
+    max_tokens: 4000,
+    reasoning_effort: "low",
   });
   return completion.choices[0].message.content;
 };
@@ -58,7 +59,8 @@ Sii specifico e pratico.
       },
     ],
     temperature: 0.7,
-    max_tokens: 2000,
+    max_tokens: 4000,
+    reasoning_effort: "low",
   });
   console.log("GROQ RESPONSE:", JSON.stringify(completion.choices[0], null, 2));
   return completion.choices[0].message.content;
